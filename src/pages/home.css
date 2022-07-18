@@ -1,0 +1,10 @@
+body {
+    background: fixed;
+    background-image: linear-gradient(135deg, #8644b6 10%, #3b2667 100%);
+}
+
+
+/* background-repeat: round;
+    background-size: contain;
+    background-position: center;
+    background-image: url("./src/assets/img/background-2.jpg"); */
