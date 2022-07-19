@@ -1,5 +1,6 @@
 import React from "react";
 import { Autocomplete, TextField } from "@mui/material";
+import DescriptionAlerts from "./pokeNavbar";
 
 export default function PokeForm() {
   const top100Films = [
@@ -36,7 +37,10 @@ export default function PokeForm() {
           type="text"
           placeholder="Digite a classe do pokemon"
         />
-        <button className="w-[800px] text-center text-white hover:bg-blue-600 duration-500 ease-in-out font-semibold rounded-lg py-4 bg-blue-500">
+        <button
+          onClick={DescriptionAlerts}
+          className="w-[800px] text-center text-white hover:bg-blue-600 duration-500 ease-in-out font-semibold rounded-lg py-4 bg-blue-500"
+        >
           PokeBotão
         </button>
       </div>

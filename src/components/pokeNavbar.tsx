@@ -1,4 +1,30 @@
 import React from "react";
+import Avatar from "@mui/material/Avatar";
+import Alert from "@mui/material/Alert";
+import AlertTitle from "@mui/material/AlertTitle";
+
+export function DescriptionAlerts() {
+  return (
+    <div>
+      <Alert severity="error">
+        <AlertTitle>Error</AlertTitle>
+        This is an error alert — <strong>check it out!</strong>
+      </Alert>
+      <Alert severity="warning">
+        <AlertTitle>Warning</AlertTitle>
+        This is a warning alert — <strong>check it out!</strong>
+      </Alert>
+      <Alert severity="info">
+        <AlertTitle>Info</AlertTitle>
+        This is an info alert — <strong>check it out!</strong>
+      </Alert>
+      <Alert severity="success">
+        <AlertTitle>Success</AlertTitle>
+        This is a success alert — <strong>check it out!</strong>
+      </Alert>
+    </div>
+  );
+}
 
 export default function PokeNavbar() {
   return (
@@ -12,7 +38,7 @@ export default function PokeNavbar() {
             <a href="#_" className="inline-block py-4 md:py-0">
               <span className="p-1 text-xl font-black leading-none ">
                 <img
-                  className="w-[100px] mt-5"
+                  className="w-[100px] mt-5 hover:rotate-180 ease-in-out duration-300"
                   src="./src/assets/img/pokemon-icon.png"
                   alt=""
                 />
@@ -68,10 +94,11 @@ export default function PokeNavbar() {
                   href="#_"
                   className="inline-flex items-center w-full px-6 py-3 text-sm font-medium leading-4 text-white  md:w-auto md:rounded-full lg:px-5"
                 >
-                  <img
-                    className="rounded-full w-[80px] h-[80px]"
-                    src="./src/assets/img/trainer.jpg"
-                    alt="Trainer"
+                  <Avatar
+                    className="w-[150px]"
+                    alt="Remy Sharp"
+                    src="./src/assets/img/trainer.webp"
+                    sx={{ width: 76, height: 76 }}
                   />
                 </a>
               </div>

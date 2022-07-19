@@ -152,7 +152,7 @@ export default function Home() {
       <div>
         <PokeNavbar />
         <PokeHome />
-        <PokeForm />
+        {/* <PokeForm /> */}
       </div>
     </body>
   );
