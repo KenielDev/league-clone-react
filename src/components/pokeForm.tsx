@@ -10,15 +10,17 @@ export default function PokeForm() {
 
   const Pokemons = () => {
     return (
-      <Autocomplete
-        disablePortal
-        id="combo-box-demo"
-        className="w-[800px] "
-        options={top100Films}
-        renderInput={(params) => (
-          <TextField {...params} label="Digite o nome do pokemon" />
-        )}
-      />
+      <div>
+        <Autocomplete
+          disablePortal
+          id="combo-box-demo"
+          className="w-[800px]"
+          options={top100Films}
+          renderInput={(params) => (
+            <TextField {...params} label="Digite o nome do pokemon" />
+          )}
+        />
+      </div>
     );
   };
 

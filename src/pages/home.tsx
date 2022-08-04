@@ -4,6 +4,7 @@ import PokeHome from "../components/pokeHome";
 import PokeNavbar from "../components/pokeNavbar";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
+import Pokemons from "../components/pokeForm";
 import "./home.css";
 
 export function ComboBox() {
@@ -152,7 +153,7 @@ export default function Home() {
       <div>
         <PokeNavbar />
         <PokeHome />
-        {/* <PokeForm /> */}
+        <PokeForm />
       </div>
     </body>
   );
