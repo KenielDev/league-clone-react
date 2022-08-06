@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import PokeForm from "../components/pokeForm";
-import PokeHome from "../components/pokeHome";
-import PokeNavbar from "../components/pokeNavbar";
+import PokeHome from "../components/home";
+import PokeNavbar from "../components/navbar";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
-import Pokemons from "../components/pokeForm";
 import "./home.css";
 
 export function ComboBox() {
@@ -153,7 +151,6 @@ export default function Home() {
       <div>
         <PokeNavbar />
         <PokeHome />
-        <PokeForm />
       </div>
     </body>
   );

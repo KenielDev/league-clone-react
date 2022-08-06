@@ -1,53 +1,53 @@
 import React, { useEffect, useState } from "react";
+import { ChampionCard } from "/src/components/cardsShop";
 // import { Container } from './styles';
 
 const App: React.FC = () => {
-  const [pokemons, setPokemons] = useState([]);
+    const [champions, setChampions] = useState([[]]);
 
-  useEffect(() => {
-    getPokemons();
-  }, []);
+    function getChampions() {
+        fetch(
+            "http://ddragon.leagueoflegends.com/cdn/12.14.1/data/en_US/champion.json"
+        )
+            .then((response) => response.json())
+            .then((result) => setChampions(result.data));
+        console.log(champions);
+    }
 
-  function getPokemons() {
-    fetch("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1154")
-      .then((response) => response.json())
-      .then((result) => setPokemons(result.results));
-    console.log(pokemons);
-  }
+    const array = [];
+    array.push(champions);
+    //   console.log(array);
 
-  return (
-    <>
-      <div>
-        <h1>Pokemons</h1>
-        <div>
-          {pokemons.map((pokemon) => {
-            const numbers = Object.keys(new Array(1).fill(null)).map(Number);
+    const arr = array.map(function (obj) {
+        return Object.keys(obj).map(function (key) {
+            return obj[key];
+        });
+    });
 
-            const selecaoPokemons = numbers.slice(1);
+    console.log(arr);
 
-            console.log(selecaoPokemons);
+    const championLoading =
+        "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/";
 
-            const urlPokemonsImg =
-              "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
-            const urlPokemons = `${urlPokemonsImg}${pokemon.name}/sprites`;
+    const championIcon =
+        "http://ddragon.leagueoflegends.com/cdn/12.14.1/img/champion/";
 
-            // for (let i = 0; i <= 1154; i++) {
-            //   const element = i;
-            //   console.log(element);
-            // }
-            return (
-              <div key={pokemon.name}>
-                <div>{pokemon.name}</div>
-                <div>
-                  <img src={`${urlPokemonsImg}/4.png`} />
-                </div>
-              </div>
-            );
-          })}
+    useEffect(() => {
+        getChampions();
+    }, []);
+
+    return (
+        <div className="flex overflow-x-auto">
+            {arr[0].map((champion) => {
+                return (
+                    <ChampionCard
+                        name={`${champion.name}`}
+                        image={`${championLoading}${champion.id}_0.jpg`}
+                    />
+                );
+            })}
         </div>
-      </div>
-    </>
-  );
+    );
 };
 
 export default App;
