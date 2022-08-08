@@ -1,24 +1,35 @@
 import React from "react";
+import background from "/src/assets/img/home/bg-senna.jpg";
+import backgroundMobile from "/src/assets/img/home/star-guardian-bg-mobile.png";
+import backgroundVideo from "/src/assets/img/home/video-bg.webm";
+import { Navbar } from "../components/navbar";
 
-export default function HomeContent() {
+export function HomeContent() {
     return (
-        <div
-            style={{
-                backgroundImage: "./src/assets/img/background-alternate.jpg",
-            }}
-        >
-            <div className="grid grid-cols-2">
-                <div></div>
-                <div className="mt-[150px]">
-                    <img
-                        className="rounded-l-full relative"
-                        src="./src/assets/img/background.webp"
-                        alt="background"
-                    />
-                </div>
-            </div>
+        <div>
+            <Navbar />
+            <div
+                style={{
+                    backgroundImage: `url(${background})`,
+                    backgroundSize: "cover",
+                }}
+                className="hidden md:flex w-full h-[100vh]"
+            ></div>
+            {/* <video
+                autoPlay
+                loop
+                muted
+                className="hidden md:flex -z-10 absolute h-full w-full object-cover"
+            >
+                <source src={backgroundVideo} type="video/webm" />
+            </video> */}
+            <div
+                className="md:hidden flex w-full h-[100vh]"
+                style={{
+                    backgroundImage: `url(${backgroundMobile})`,
+                    backgroundSize: "cover",
+                }}
+            ></div>
         </div>
-
-        // <img classNameName="w-[300px]" src="./src/assets/img/mewtwo.png" alt="Mewtwo" />
     );
 }

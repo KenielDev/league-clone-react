@@ -1,142 +1,142 @@
 import React from "react";
-import Avatar from "@mui/material/Avatar";
-import Alert from "@mui/material/Alert";
-import AlertTitle from "@mui/material/AlertTitle";
 
-export function DescriptionAlerts() {
-  return (
-    <div>
-      <Alert severity="error">
-        <AlertTitle>Error</AlertTitle>
-        This is an error alert — <strong>check it out!</strong>
-      </Alert>
-      <Alert severity="warning">
-        <AlertTitle>Warning</AlertTitle>
-        This is a warning alert — <strong>check it out!</strong>
-      </Alert>
-      <Alert severity="info">
-        <AlertTitle>Info</AlertTitle>
-        This is an info alert — <strong>check it out!</strong>
-      </Alert>
-      <Alert severity="success">
-        <AlertTitle>Success</AlertTitle>
-        This is a success alert — <strong>check it out!</strong>
-      </Alert>
-    </div>
-  );
+function buyClickSound() {
+    const buySound = new Audio();
+    buySound.src = "/src/assets/sounds/buy.wav";
+    buySound.play();
 }
 
-export default function PokeNavbar() {
-  return (
-    <div>
-      <nav
-        className="relative z-50 h-24 select-none"
-        x-data="{ showMenu: false }"
-      >
-        <div className="container relative flex flex-wrap items-center justify-between h-24 mx-auto overflow-hidden font-medium md:overflow-visible lg:justify-center sm:px-4 md:px-2">
-          <div className="flex items-center justify-start w-1/4 h-full pr-4">
-            <a href="#_" className="inline-block py-4 md:py-0">
-              <span className="p-1 text-xl font-black leading-none ">
-                <img
-                  className="w-[100px] mt-5 hover:rotate-180 ease-in-out duration-300"
-                  src="./src/assets/img/pokemon-icon.png"
-                  alt=""
-                />
-              </span>
-            </a>
-          </div>
-          <div className="top-0 left-0 items-start hidden w-full h-full p-4 text-sm bg-gray-900 bg-opacity-50 md:items-center md:w-3/4 lg:text-base md:bg-transparent md:p-0 md:relative md:flex">
-            <div className="flex-col w-full h-auto overflow-hidden bg-white rounded-lg md:bg-transparent md:overflow-visible md:rounded-none md:relative md:flex md:flex-row mt-5">
-              <div className="flex flex-col items-start justify-center w-full text-center lg:space-x-8 md:w-2/3 md:mt-0 md:flex-row md:items-center">
-                <a
-                  href="#_"
-                  className="inline-block w-full py-2 mx-0 ml-6 font-medium text-left text-white md:ml-0 md:w-auto md:px-0 md:mx-2 lg:mx-3 md:text-center"
-                >
-                  Home
-                </a>
-                <a
-                  href="#_"
-                  className="inline-block w-full py-2 mx-0 font-medium text-left text-white md:w-auto md:px-0 md:mx-2 lg:mx-3 md:text-center"
-                >
-                  xesq
-                </a>
-                <a
-                  href="#_"
-                  className="inline-block w-full py-2 mx-0 font-medium text-left text-white md:w-auto md:px-0 md:mx-2 lg:mx-3 md:text-center"
-                >
-                  Sobre
-                </a>
-                <a
-                  href="#_"
-                  className="inline-block w-full py-2 mx-0 font-medium text-left text-white md:w-auto md:px-0 md:mx-2 lg:mx-3 md:text-center"
-                >
-                  Contato
-                </a>
-                <a
-                  href="#_"
-                  className="absolute top-0 left-0 hidden py-2 mt-6 ml-10 mr-2 text-gray-600 lg:inline-block md:mt-0 md:ml-2 lg:mx-3 md:relative"
-                >
-                  <svg
-                    className="inline w-5 h-5"
-                    fill="white"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                    stroke="black"
-                  >
-                    <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                  </svg>
-                </a>
-              </div>
-              <div className="flex flex-col items-start justify-end w-full pt-4 md:items-center md:w-1/3 md:flex-row md:py-0">
-                <a
-                  href="#_"
-                  className="inline-flex items-center w-full px-6 py-3 text-sm font-medium leading-4 text-white  md:w-auto md:rounded-full lg:px-5"
-                >
-                  <Avatar
-                    className="w-[150px]"
-                    alt="Remy Sharp"
-                    src="./src/assets/img/trainer.webp"
-                    sx={{ width: 76, height: 76 }}
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="absolute right-0 flex flex-col items-center  justify-center w-10 h-10 bg-white rounded-full cursor-pointer md:hidden hover:bg-gray-100">
-            <svg
-              className="w-6 h-6 text-white"
-              x-show="!showMenu"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              x-cloak=""
-            >
-              <path d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-            <svg
-              className="w-6 h-6 text-white"
-              x-show="showMenu"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              x-cloak=""
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M6 18L18 6M6 6l12 12"
-              ></path>
-            </svg>
-          </div>
+function menuClickSound() {
+    const menuSound = new Audio();
+    menuSound.src = "/src/assets/sounds/menu.wav";
+    menuSound.play();
+}
+
+export function Navbar() {
+    return (
+        <div className="flex flex-row">
+            <nav className="absolute">
+                <div className="flex px-10 border-b ">
+                    <div className="flex flex-row gap-x-80 ">
+                        <div className="flex flex-row text-white font-semibold">
+                            <div className="w-[230px] flex items-center py-6">
+                                <a
+                                    href=""
+                                    className="hover:scale-105 ease-in-out duration-300"
+                                >
+                                    <img
+                                        alt="Logo"
+                                        src="./src/assets/img/navbar/play-icon.png"
+                                    />
+                                </a>
+                            </div>
+                            <div className="w-[50px] flex items-center ml-6">
+                                <button className="hover:scale-105 ease-in-out duration-300">
+                                    <img
+                                        src="./src/assets/img/navbar/alert.png"
+                                        alt="Alert Button"
+                                    />
+                                </button>
+                            </div>
+                            <div className="px-4 flex items-center h-full hover:bg-black">
+                                <button
+                                    onMouseDownCapture={menuClickSound}
+                                    aria-current="page"
+                                >
+                                    HOME
+                                </button>
+                            </div>
+                            <div className="px-4 flex items-center h-full hover:shadow-2xl shadow-black">
+                                <button
+                                    onMouseDownCapture={buyClickSound}
+                                    aria-current="page"
+                                >
+                                    PROFILE
+                                </button>
+                            </div>
+                            <div className="px-4 flex items-center h-full hover:bg-black">
+                                <a
+                                    onMouseDownCapture={menuClickSound}
+                                    href=""
+                                    aria-current="page"
+                                >
+                                    COLLECTION
+                                </a>
+                            </div>
+                        </div>
+                        <div className="flex w-full items-center gap-10">
+                            <div className="w-[50px]">
+                                <a href="">
+                                    <img
+                                        src="./src/assets/img/navbar/avatar.png"
+                                        alt="Bag"
+                                    />
+                                </a>
+                            </div>
+                            <div className="w-[50px]">
+                                <a href="">
+                                    <img
+                                        src="./src/assets/img/navbar/mochila.png"
+                                        alt="Bag"
+                                    />
+                                </a>
+                            </div>
+                            <div className="w-[50px]">
+                                <a href="">
+                                    <img
+                                        src="./src/assets/img/navbar/forja.png"
+                                        alt="Bag"
+                                    />
+                                </a>
+                            </div>
+                            <div className="w-[50px]">
+                                <a href="">
+                                    <img
+                                        src="./src/assets/img/navbar/free.png"
+                                        alt="Bag"
+                                    />
+                                </a>
+                            </div>
+                            <div className="w-[50px]">
+                                <a href="">
+                                    <img
+                                        src="./src/assets/img/navbar/coins.png"
+                                        alt="Bag"
+                                    />
+                                </a>
+                            </div>
+                            <div className="grid grid-rows-2 border-l-2 h-[70%]">
+                                <div className="flex items-center mx-auto">
+                                    <div className="w-[50px]">
+                                        <img
+                                            className="px-2"
+                                            src="./src/assets/img/navbar/rp.png"
+                                            alt=""
+                                        />
+                                    </div>
+                                    <div className="text-white font-bold">
+                                        6600
+                                    </div>
+                                </div>
+                                <div>
+                                    <div className="flex items-center ">
+                                        <div className="w-[50px]">
+                                            <img
+                                                src="./src/assets/img/navbar/ea.webp"
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div className="text-white font-bold">
+                                            6600
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
         </div>
-      </nav>
-    </div>
-  );
+    );
 }
+export default Navbar;

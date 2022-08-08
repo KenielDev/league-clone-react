@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { ChampionCard } from "/src/components/championCard";
+import { ChampionCard } from "./components/championCard";
+import { HomeContent } from "./components/home";
 // import { Container } from './styles';
 
 const App: React.FC = () => {
@@ -37,15 +38,16 @@ const App: React.FC = () => {
     }, []);
 
     return (
-        <div className="flex flex-wrap overflow-x-auto ">
-            {arrChampions[0].map((champion) => {
+        <div>
+            {/* {arrChampions[0].map((champion) => {
                 return (
                     <ChampionCard
                         name={`${champion.name}`}
                         image={`${championLoading}${champion.id}_0.jpg`}
                     />
                 );
-            })}
+            })} */}
+            <HomeContent />
         </div>
     );
 };
