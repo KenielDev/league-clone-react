@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ChampionCard } from "/src/components/cardsShop";
+import { ChampionCard } from "/src/components/championCard";
 // import { Container } from './styles';
 
 const App: React.FC = () => {
@@ -18,13 +18,13 @@ const App: React.FC = () => {
     array.push(champions);
     //   console.log(array);
 
-    const arr = array.map(function (obj) {
+    const arrChampions = array.map(function (obj) {
         return Object.keys(obj).map(function (key) {
             return obj[key];
         });
     });
 
-    console.log(arr);
+    console.log(arrChampions);
 
     const championLoading =
         "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/";
@@ -37,8 +37,8 @@ const App: React.FC = () => {
     }, []);
 
     return (
-        <div className="flex overflow-x-auto">
-            {arr[0].map((champion) => {
+        <div className="flex flex-wrap overflow-x-auto ">
+            {arrChampions[0].map((champion) => {
                 return (
                     <ChampionCard
                         name={`${champion.name}`}
