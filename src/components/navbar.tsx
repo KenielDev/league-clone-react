@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, Router } from "react-router-dom";
 
 function buyClickSound() {
     const buySound = new Audio();
@@ -16,7 +17,7 @@ export function Navbar() {
     return (
         <div className="flex flex-row">
             <nav className="absolute">
-                <div className="flex px-10 border-b ">
+                <div className="flex border-b-full">
                     <div className="flex flex-row gap-x-80 ">
                         <div className="flex flex-row text-white font-semibold">
                             <div className="w-[230px] flex items-center py-6">
@@ -65,7 +66,7 @@ export function Navbar() {
                             </div>
                         </div>
                         <div className="flex w-full items-center gap-10">
-                            <div className="w-[50px]">
+                            <div className="w-[80px]">
                                 <a href="">
                                     <img
                                         src="./src/assets/img/navbar/avatar.png"
@@ -73,7 +74,7 @@ export function Navbar() {
                                     />
                                 </a>
                             </div>
-                            <div className="w-[50px]">
+                            <div className="w-[80px]">
                                 <a href="">
                                     <img
                                         src="./src/assets/img/navbar/mochila.png"
@@ -81,7 +82,7 @@ export function Navbar() {
                                     />
                                 </a>
                             </div>
-                            <div className="w-[50px]">
+                            <div className="w-[80px]">
                                 <a href="">
                                     <img
                                         src="./src/assets/img/navbar/forja.png"
@@ -89,7 +90,7 @@ export function Navbar() {
                                     />
                                 </a>
                             </div>
-                            <div className="w-[50px]">
+                            <div className="w-[80px]">
                                 <a href="">
                                     <img
                                         src="./src/assets/img/navbar/free.png"
@@ -97,7 +98,7 @@ export function Navbar() {
                                     />
                                 </a>
                             </div>
-                            <div className="w-[50px]">
+                            <div className="w-[80px]">
                                 <a href="">
                                     <img
                                         src="./src/assets/img/navbar/coins.png"
@@ -131,6 +132,13 @@ export function Navbar() {
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div>
+                                <img
+                                    className="rounded-full w-1/2"
+                                    src="./src/assets/img/navbar/profile-icon.webp"
+                                    alt=""
+                                />
                             </div>
                         </div>
                     </div>

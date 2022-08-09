@@ -9,7 +9,7 @@ export function ChampionCard(props: string) {
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
             }}
-            className="flex flex-col w-[10%] border h-[400px] opacity-80 hover:opacity-100 rounded-xl hover:scale-110 ease-in-out duration-300 cursor-pointer"
+            className="flex flex-col w-[50%] border h-[400px] opacity-80 hover:opacity-100 rounded-xl hover:scale-110 ease-in-out duration-300 cursor-pointer hover:z-10"
         >
             <div className="grid grid-rows-6">
                 <div className="row-span-4"></div>

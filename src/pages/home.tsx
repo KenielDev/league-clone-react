@@ -6,7 +6,7 @@ import { Navbar } from "../components/navbar";
 
 export function HomeContent() {
     return (
-        <div>
+        <div className="overflow-x-hidden">
             <Navbar />
             <div
                 style={{
