@@ -3,18 +3,23 @@ import background from "/src/assets/img/home/bg-senna.jpg";
 import backgroundMobile from "/src/assets/img/home/star-guardian-bg-mobile.png";
 import backgroundVideo from "/src/assets/img/home/video-bg.webm";
 import { Navbar } from "../components/navbar";
+import { TabsHome } from "../components/TabsHome";
 
 export function HomeContent() {
     return (
-        <div>
-            <Navbar />
+        <div className="w-full">
+            <div className="h-full">
+                <Navbar />
+            </div>
             <div
                 style={{
                     backgroundImage: `url(${background})`,
                     backgroundSize: "cover",
                 }}
                 className="hidden md:flex w-full h-[100vh]"
-            ></div>
+            >
+                <TabsHome />
+            </div>
             {/* <video
                 autoPlay
                 loop
