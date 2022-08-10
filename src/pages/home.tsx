@@ -1,5 +1,5 @@
 import React from "react";
-import background from "/src/assets/img/home/bg-senna.jpg";
+import background from "/src/assets/img/home/pant-bg.jpg";
 import backgroundMobile from "/src/assets/img/home/star-guardian-bg-mobile.png";
 import backgroundVideo from "/src/assets/img/home/video-bg.webm";
 import { Navbar } from "../components/navbar";
@@ -7,19 +7,18 @@ import { TabsHome } from "../components/TabsHome";
 
 export function HomeContent() {
     return (
-        <div className="w-full">
-            <div className="h-full">
+        <div
+            style={{
+                backgroundImage: `url(${background})`,
+                backgroundSize: "cover",
+            }}
+            className="hidden md:flex flex-col w-full h-[100vh]"
+        >
+            <div className="h-full w-full">
                 <Navbar />
-            </div>
-            <div
-                style={{
-                    backgroundImage: `url(${background})`,
-                    backgroundSize: "cover",
-                }}
-                className="hidden md:flex w-full h-[100vh]"
-            >
                 <TabsHome />
             </div>
+
             {/* <video
                 autoPlay
                 loop
@@ -28,13 +27,13 @@ export function HomeContent() {
             >
                 <source src={backgroundVideo} type="video/webm" />
             </video> */}
-            <div
+            {/* <div
                 className="md:hidden flex w-full h-[100vh]"
                 style={{
                     backgroundImage: `url(${backgroundMobile})`,
                     backgroundSize: "cover",
                 }}
-            ></div>
+            ></div> */}
         </div>
     );
 }

@@ -7,7 +7,7 @@ export function TabsHome() {
             <div>
                 <Tabs className=" text-white">
                     <TabList className="gap-x-8 font-bold">
-                        <Tab className="focus:border-b-2 ">Overview</Tab>
+                        <Tab className="focus:border-b-2  py2">Overview</Tab>
                         <Tab className="focus:border-b-2 ">News</Tab>
                         <Tab className="focus:border-b-2 ">About</Tab>
                     </TabList>
@@ -16,7 +16,7 @@ export function TabsHome() {
                         <TabPanel>
                             <div className="w-1/2 flex mt-[200px] items-center">
                                 <div>
-                                    <div className="text-4xl font-bold">
+                                    <div className="text-4xl text-[] font-bold">
                                         UNIVERSE: ODISSEY
                                     </div>
                                     <div className="text-xl py-4">
