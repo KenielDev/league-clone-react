@@ -20,7 +20,7 @@ const App: React.FC = () => {
     //   console.log(array);
 
     const arrChampions = array.map(function (obj) {
-        return Object.keys(obj).map(function (key) {
+        return Object.keys(obj).map(function (key: any) {
             return obj[key];
         });
     });

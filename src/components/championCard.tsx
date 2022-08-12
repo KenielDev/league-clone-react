@@ -1,6 +1,6 @@
 import React from "react";
 
-export function ChampionCard(props: string) {
+export function ChampionCard(props: any) {
     return (
         <div
             style={{

@@ -1,5 +1,46 @@
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
+import {
+    Tabs,
+    TabList,
+    TabPanels,
+    Tab,
+    TabPanel,
+    useDisclosure,
+} from "@chakra-ui/react";
+import React from "react";
 import { Link } from "@chakra-ui/react";
+import arrChampions from "../App";
+import {
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalFooter,
+    ModalBody,
+    ModalCloseButton,
+    Button,
+} from "@chakra-ui/react";
+
+export function VerticallyCenter() {
+    const { isOpen, onOpen, onClose } = useDisclosure();
+
+    return (
+        <div>
+            <Button onClick={onOpen}>Trigger modal</Button>
+
+            <Modal onClose={onClose} isOpen={isOpen} isCentered>
+                <ModalOverlay />
+                <ModalContent className="bg-black">
+                    <ModalHeader>Modal Title</ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody>teste</ModalBody>
+                    <ModalFooter>
+                        <Button onClick={onClose}>Close</Button>
+                    </ModalFooter>
+                </ModalContent>
+            </Modal>
+        </div>
+    );
+}
 
 export function TabsHome() {
     return (
@@ -16,9 +57,13 @@ export function TabsHome() {
                             Free Champion Rotation
                         </button>
                     </div>
+                    <div>
+                        <VerticallyCenter />
+                    </div>
+
                     <TabPanels>
                         <TabPanel>
-                            <div className="w-1/2 flex mt-[200px] items-center">
+                            <div className="w-1/3 flex mt-[150px] items-center">
                                 <div>
                                     <div className="text-4xl font-bold">
                                         UNIVERSE: PANTH!
@@ -47,8 +92,8 @@ export function TabsHome() {
                 </Tabs>
             </div>
 
-            <div className="w-full h-full py-4 flex gap-10">
-                <div className="flex w-[400px] flex-col border-2 rounded">
+            <div className="w-full h-full mt-32 flex gap-10">
+                <div className="flex w-[400px] cursor-pointer hover:scale-110 ease-in-out duration-300 flex-col border-2 rounded">
                     <div>
                         <img
                             src="./src/assets/img/home/artigos/artigo-1.jpg"
@@ -59,7 +104,18 @@ export function TabsHome() {
                         CBLOL Academy 2022 - 2ª Etapa
                     </div>
                 </div>
-                <div className="flex  py-20 flex-col border-2 rounded">
+                <div className="flex w-[400px] cursor-pointer hover:scale-110 ease-in-out duration-300 flex-col border-2 rounded">
+                    <div>
+                        <img
+                            src="./src/assets/img/home/artigos/artigo-2.jpg"
+                            alt=""
+                        />
+                    </div>
+                    <div className="text-yellow-400 font-semibold text-center bg-gray-500">
+                        CBLOL Academy 2022 - 2ª Etapa
+                    </div>
+                </div>
+                <div className="flex p-20 flex-col border-2 rounded">
                     <div>image</div>
                     <div>text</div>
                 </div>
