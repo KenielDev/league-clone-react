@@ -29,7 +29,7 @@ export function VerticallyCenter() {
 
             <Modal onClose={onClose} isOpen={isOpen} isCentered>
                 <ModalOverlay />
-                <ModalContent className="bg-black">
+                <ModalContent className="bg-gray-400 w-1/2 text-white">
                     <ModalHeader>Modal Title</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>teste</ModalBody>
@@ -48,7 +48,7 @@ export function TabsHome() {
             <div className="flex justify-between">
                 <Tabs className=" text-white">
                     <TabList className="gap-x-8 font-bold">
-                        <Tab className="focus:border-b-2  py2">Overview</Tab>
+                        <Tab className="focus:border-b-2  ">Overview</Tab>
                         <Tab className="focus:border-b-2 ">News</Tab>
                         <Tab className="focus:border-b-2 ">About</Tab>
                     </TabList>
@@ -92,8 +92,8 @@ export function TabsHome() {
                 </Tabs>
             </div>
 
-            <div className="w-full h-full mt-32 flex gap-10">
-                <div className="flex w-[400px] cursor-pointer hover:scale-110 ease-in-out duration-300 flex-col border-2 rounded">
+            <div className="w-full h-full mt-20 grid grid-cols-12">
+                <div className="flex h-full col-span-3 w-[85%] cursor-pointer hover:scale-110 ease-in-out duration-300 flex-col border-2 rounded">
                     <div>
                         <img
                             src="./src/assets/img/home/artigos/artigo-1.jpg"
@@ -104,7 +104,7 @@ export function TabsHome() {
                         CBLOL Academy 2022 - 2ª Etapa
                     </div>
                 </div>
-                <div className="flex w-[400px] cursor-pointer hover:scale-110 ease-in-out duration-300 flex-col border-2 rounded">
+                <div className="flex h-full col-span-3 w-[85%] cursor-pointer hover:scale-110 ease-in-out duration-300 flex-col border-2 rounded">
                     <div>
                         <img
                             src="./src/assets/img/home/artigos/artigo-2.jpg"
@@ -115,19 +115,19 @@ export function TabsHome() {
                         CBLOL Academy 2022 - 2ª Etapa
                     </div>
                 </div>
-                <div className="flex p-20 flex-col border-2 rounded">
+                <div className="flex h-full col-span-2 w-[85%] cursor-pointer hover:scale-110 ease-in-out duration-300 flex-col border-2 rounded">
+                    <div>
+                        <img src="" alt="champ" />
+                    </div>
+                    <div className="text-yellow-400 font-semibold text-center bg-gray-500">
+                        CBLOL Academy 2022 - 2ª Etapa
+                    </div>
+                </div>
+                <div className="flex col-span-2  w-[85%] flex-col border-2 rounded">
                     <div>image</div>
                     <div>text</div>
                 </div>
-                <div className="flex p-20 flex-col border-2 rounded">
-                    <div>image</div>
-                    <div>text</div>
-                </div>
-                <div className="flex p-20 flex-col border-2 rounded">
-                    <div>image</div>
-                    <div>text</div>
-                </div>
-                <div className="flex p-20 flex-col border-2 rounded">
+                <div className="flex col-span-2 w-[85%] flex-col border-2 rounded">
                     <div>image</div>
                     <div>text</div>
                 </div>

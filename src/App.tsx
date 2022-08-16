@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { ChampionCard } from "./components/championCard";
 import { HomeContent } from "./pages/home";
+import { Profile } from "./pages/Profile";
+import { BrowserRouter as Router } from "react-router-dom";
+import { MainRoutes } from "./pages/Routes";
+
 // import { Container } from './styles';
 
-const App: React.FC = () => {
-    const [champions, setChampions] = useState([[]]);
+export function App() {
+    const [champions, setChampions] = useState([]);
 
     function getChampions() {
         fetch(
@@ -48,8 +52,9 @@ const App: React.FC = () => {
     }, []);
 
     return (
-        <div className="">
-            <div className="flex jus">
+        <Router>
+            <div>
+                {/* <div className="flex"> */}
                 {/* {arrChampions[0].map((champion) => {
                 return (
                     <ChampionCard
@@ -58,12 +63,11 @@ const App: React.FC = () => {
                     />
                 );
             })} */}
+                {/* </div> */}
+                <MainRoutes />
             </div>
-            <div>
-                <HomeContent />
-            </div>
-        </div>
+        </Router>
     );
-};
+}
 
 export default App;

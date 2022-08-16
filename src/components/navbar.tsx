@@ -1,16 +1,6 @@
 import React from "react";
-import {
-    Menu,
-    MenuButton,
-    MenuList,
-    MenuItem,
-    MenuItemOption,
-    MenuGroup,
-    MenuOptionGroup,
-    MenuDivider,
-    Button,
-} from "@chakra-ui/react";
-import { ChevronDownIcon } from "@chakra-ui/icons";
+import { Menu, MenuButton, MenuList, MenuItem, Button } from "@chakra-ui/react";
+import { Routes, Route, Link } from "react-router-dom";
 
 function buyClickSound() {
     const buySound = new Audio();
@@ -50,20 +40,12 @@ export function Navbar() {
                             </button>
                         </div>
                         <div className="px-4 flex items-center h-full hover:bg-black">
-                            <button
-                                onMouseDownCapture={menuClickSound}
-                                aria-current="page"
-                            >
-                                HOME
-                            </button>
+                            <button aria-current="page">HOME</button>
                         </div>
                         <div className="px-4 flex items-center h-full hover:shadow-2xl shadow-black">
-                            <button
-                                onMouseDownCapture={buyClickSound}
-                                aria-current="page"
-                            >
+                            <Link to={"profile"} aria-current="page">
                                 PROFILE
-                            </button>
+                            </Link>
                         </div>
                         <div className="px-4 flex items-center h-full hover:bg-black">
                             <a
@@ -81,7 +63,7 @@ export function Navbar() {
                         <div className="w-[50px]">
                             <a href="">
                                 <img
-                                    src="./src/assets/img/navbar/avatar.png"
+                                    src="./src/assets/img/navbar/avatar.svg"
                                     alt="Bag"
                                 />
                             </a>
@@ -89,7 +71,7 @@ export function Navbar() {
                         <div className="w-[50px]">
                             <a href="">
                                 <img
-                                    src="./src/assets/img/navbar/mochila.png"
+                                    src="./src/assets/img/navbar/mochila.svg"
                                     alt="Bag"
                                 />
                             </a>
@@ -97,7 +79,7 @@ export function Navbar() {
                         <div className="w-[50px]">
                             <a href="">
                                 <img
-                                    src="./src/assets/img/navbar/forja.png"
+                                    src="./src/assets/img/navbar/forja.svg"
                                     alt="Bag"
                                 />
                             </a>
@@ -105,7 +87,7 @@ export function Navbar() {
                         <div className="w-[50px]">
                             <a href="">
                                 <img
-                                    src="./src/assets/img/navbar/free.png"
+                                    src="./src/assets/img/navbar/free.svg"
                                     alt="Bag"
                                 />
                             </a>
@@ -113,7 +95,7 @@ export function Navbar() {
                         <div className="w-[50px]">
                             <a href="">
                                 <img
-                                    src="./src/assets/img/navbar/coins.png"
+                                    src="./src/assets/img/navbar/coin.svg"
                                     alt="Bag"
                                 />
                             </a>
