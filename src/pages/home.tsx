@@ -1,7 +1,7 @@
 import React from "react";
 import background from "/src/assets/img/home/pant-bg.jpg";
-import backgroundMobile from "/src/assets/img/home/star-guardian-bg-mobile.png";
-import backgroundVideo from "/src/assets/img/home/video-bg.webm";
+// import backgroundMobile from "/src/assets/img/home/star-guardian-bg-mobile.png";
+// import backgroundVideo from "/src/assets/img/home/video-bg.webm";
 import { Navbar } from "../components/navbar";
 import { TabsHome } from "../components/TabsHome";
 

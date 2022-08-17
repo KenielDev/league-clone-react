@@ -1,7 +1,10 @@
-import React from "react";
-import pathsChampions from "../api/api";
+import React, { useState, useEffect } from "react";
+import pathsChampions, { getChampions } from "../components/api";
 
 export function Profile() {
-    console.log(pathsChampions);
-    return <div>{}</div>;
+    const [splahArt, setSplahArt] = useState([]);
+
+    setSplahArt;
+
+    return <div></div>;
 }

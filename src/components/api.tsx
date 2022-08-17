@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 
 const [champions, setChampions] = useState([]);
 
-function getChampions() {
+export function getChampions() {
     fetch(
         "http://ddragon.leagueoflegends.com/cdn/12.14.1/data/en_US/champion.json"
     )
@@ -25,20 +25,22 @@ console.log(arrChampions);
 
 const imageArray = [1, 2, 3];
 
-const pathsChampions = [
-    {
-        championLoading:
-            "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/",
-    },
-    {
-        championIcon:
-            "http://ddragon.leagueoflegends.com/cdn/12.14.1/img/champion/",
-    },
-    {
-        championSplashArt:
-            "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/",
-    },
-];
+export function pathsChampions() {
+    [
+        {
+            championLoading:
+                "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/",
+        },
+        {
+            championIcon:
+                "http://ddragon.leagueoflegends.com/cdn/12.14.1/img/champion/",
+        },
+        {
+            championSplashArt:
+                "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/",
+        },
+    ];
+}
 
 const randomImage = imageArray[Math.floor(Math.random() * imageArray.length)];
 
