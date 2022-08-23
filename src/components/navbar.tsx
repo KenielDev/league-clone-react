@@ -1,161 +1,246 @@
-import React from "react";
-import { Menu, MenuButton, MenuList, MenuItem, Button } from "@chakra-ui/react";
-import { Routes, Route, Link } from "react-router-dom";
+// import React from "react";
+// import { Menu, MenuButton, MenuList, MenuItem, Button } from "@chakra-ui/react";
+// import { Routes, Route, Link } from "react-router-dom";
 
-function buyClickSound() {
-    const buySound = new Audio();
-    buySound.src = "/src/assets/sounds/buy.wav";
-    buySound.play();
-}
+// function buyClickSound() {
+//     const buySound = new Audio();
+//     buySound.src = "/src/assets/sounds/buy.wav";
+//     buySound.play();
+// }
 
-function menuClickSound() {
-    const menuSound = new Audio();
-    menuSound.src = "/src/assets/sounds/menu.wav";
-    menuSound.play();
+// function menuClickSound() {
+//     const menuSound = new Audio();
+//     menuSound.src = "/src/assets/sounds/menu.wav";
+//     menuSound.play();
+// }
+
+/* This example requires Tailwind CSS v2.0+ */
+import { Fragment } from "react";
+import { Disclosure, Menu, Transition } from "@headlessui/react";
+import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
+
+const navigation = [
+    { name: "HOME", href: "#", current: true },
+    { name: "PROFILE", href: "#", current: false },
+    { name: "CLASH", href: "#", current: false },
+];
+
+function classNames(...classes: any) {
+    return classes.filter(Boolean).join(" ");
 }
 
 export function Navbar() {
     return (
-        <header className="relative">
-            <div className="flex px-4 flex-row justify-between bg-transparent w-full right-2 left-2">
-                <div className="flex ">
-                    <div className="flex items-center w-full text-white font-semibold">
-                        <div className="w-[230px] flex items-center py-6">
-                            <a
-                                href=""
-                                className="hover:scale-105 ease-in-out duration-300"
-                            >
-                                <img
-                                    alt="Logo"
-                                    src="./src/assets/img/navbar/play-icon.png"
-                                />
-                            </a>
-                        </div>
-                        <div className="w-[50px] flex items-center ml-6">
-                            <button className="hover:scale-105 ease-in-out duration-300">
-                                <img
-                                    src="./src/assets/img/navbar/alert.png"
-                                    alt="Alert Button"
-                                />
-                            </button>
-                        </div>
-                        <div className="px-4 flex items-center h-full hover:bg-black">
-                            <button aria-current="page">HOME</button>
-                        </div>
-                        <div className="px-4 flex items-center h-full hover:shadow-2xl shadow-black">
-                            <Link to={"profile"} aria-current="page">
-                                PROFILE
-                            </Link>
-                        </div>
-                        <div className="px-4 flex items-center h-full hover:bg-black">
-                            <a
-                                onMouseDownCapture={menuClickSound}
-                                href=""
-                                aria-current="page"
-                            >
-                                COLLECTION
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div className="">
-                    <div className="flex w-full justify-items-end items-center gap-10 h-[80%]">
-                        <div className="w-[50px]">
-                            <a href="">
-                                <img
-                                    src="./src/assets/img/navbar/avatar.svg"
-                                    alt="Bag"
-                                />
-                            </a>
-                        </div>
-                        <div className="w-[50px]">
-                            <a href="">
-                                <img
-                                    src="./src/assets/img/navbar/mochila.svg"
-                                    alt="Bag"
-                                />
-                            </a>
-                        </div>
-                        <div className="w-[50px]">
-                            <a href="">
-                                <img
-                                    src="./src/assets/img/navbar/forja.svg"
-                                    alt="Bag"
-                                />
-                            </a>
-                        </div>
-                        <div className="w-[50px]">
-                            <a href="">
-                                <img
-                                    src="./src/assets/img/navbar/free.svg"
-                                    alt="Bag"
-                                />
-                            </a>
-                        </div>
-                        <div className="w-[50px]">
-                            <a href="">
-                                <img
-                                    src="./src/assets/img/navbar/coin.svg"
-                                    alt="Bag"
-                                />
-                            </a>
-                        </div>
-                        <div className="grid grid-rows-2 border-l-2 h-[70%]">
-                            <div className="flex items-center mx-auto">
-                                <div className="w-[50px]">
+        <Disclosure as="nav" className="bg-transparent">
+            {({ open }) => (
+                <>
+                    <div className="mx-auto px-2 sm:px-6 lg:px-10 py-4">
+                        <div className="relative flex items-center justify-between h-16">
+                            <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                                {/* Mobile menu button*/}
+                                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                                    <span className="sr-only">
+                                        Open main menu
+                                    </span>
+                                    {open ? (
+                                        <XIcon
+                                            className="block h-6 w-6"
+                                            aria-hidden="true"
+                                        />
+                                    ) : (
+                                        <MenuIcon
+                                            className="block h-6 w-6"
+                                            aria-hidden="true"
+                                        />
+                                    )}
+                                </Disclosure.Button>
+                            </div>
+                            <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+                                <div className="flex-shrink-0 flex items-center">
                                     <img
-                                        className="px-2"
-                                        src="./src/assets/img/navbar/rp.png"
+                                        className="hidden lg:block w-[200px]"
+                                        src="./src/assets/img/navbar/play-icon.png"
                                         alt=""
                                     />
                                 </div>
-                                <div className="text-white font-bold">6600</div>
-                            </div>
-                            <div>
-                                <div className="flex items-center ">
-                                    <div className="w-[50px]">
-                                        <img
-                                            src="./src/assets/img/navbar/ea.webp"
-                                            alt=""
-                                        />
-                                    </div>
-                                    <div className="text-white font-bold">
-                                        6600
+                                <div className="hidden sm:block sm:ml-6 lg:flex items-center justify-between">
+                                    <div className="flex space-x-4 ">
+                                        {navigation.map((item) => (
+                                            <a
+                                                key={item.name}
+                                                href={item.href}
+                                                className={classNames(
+                                                    item.current
+                                                        ? "bg-gray-900 text-white"
+                                                        : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                                                    "px-3 py-2 rounded-md text-sm font-medium"
+                                                )}
+                                                aria-current={
+                                                    item.current
+                                                        ? "page"
+                                                        : undefined
+                                                }
+                                            >
+                                                {item.name}
+                                            </a>
+                                        ))}
                                     </div>
                                 </div>
                             </div>
+                            <div className="absolute inset-y-0 right-0 sm:flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 gap-x-6 hidden">
+                                <a href="">
+                                    <img
+                                        className="w-[50px]"
+                                        src="./src/assets/img/navbar/avatar.svg"
+                                        alt="erro"
+                                    />
+                                </a>
+                                <a href="">
+                                    <img
+                                        className="w-[50px]"
+                                        src="./src/assets/img/navbar/mochila.svg"
+                                        alt="erro"
+                                    />
+                                </a>
+                                <a href="">
+                                    <img
+                                        className="w-[50px]"
+                                        src="./src/assets/img/navbar/forja.svg"
+                                        alt="erro"
+                                    />
+                                </a>
+                                <a href="">
+                                    <img
+                                        className="w-[50px]"
+                                        src="./src/assets/img/navbar/free.svg"
+                                        alt="erro"
+                                    />
+                                </a>
+                                <a href="">
+                                    <img
+                                        className="w-[50px]"
+                                        src="./src/assets/img/navbar/coin.svg"
+                                        alt="erro"
+                                    />
+                                </a>
+
+                                <div className="grid grid-rows-2 border-l border-white h-[50%]">
+                                    <div>
+                                        <img
+                                            className="w-[50px]"
+                                            src="./src/assets/img/navbar/ea.webp"
+                                            alt="erro"
+                                        />
+                                    </div>
+                                    <div>
+                                        <img
+                                            className="w-[25px]"
+                                            src="./src/assets/img/navbar/rp.webp"
+                                            alt="erro"
+                                        />
+                                    </div>
+                                </div>
+
+                                {/* Profile dropdown */}
+                                <Menu as="div" className="ml-3 relative">
+                                    <div>
+                                        <Menu.Button className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                                            <span className="sr-only">
+                                                Open user menu
+                                            </span>
+                                            <img
+                                                className="h-8 w-8 rounded-full"
+                                                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                                alt=""
+                                            />
+                                        </Menu.Button>
+                                    </div>
+                                    <Transition
+                                        as={Fragment}
+                                        enter="transition ease-out duration-100"
+                                        enterFrom="transform opacity-0 scale-95"
+                                        enterTo="transform opacity-100 scale-100"
+                                        leave="transition ease-in duration-75"
+                                        leaveFrom="transform opacity-100 scale-100"
+                                        leaveTo="transform opacity-0 scale-95"
+                                    >
+                                        <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                            <Menu.Item>
+                                                {({ active }) => (
+                                                    <a
+                                                        href="#"
+                                                        className={classNames(
+                                                            active
+                                                                ? "bg-gray-100"
+                                                                : "",
+                                                            "block px-4 py-2 text-sm text-gray-700"
+                                                        )}
+                                                    >
+                                                        Your Profile
+                                                    </a>
+                                                )}
+                                            </Menu.Item>
+                                            <Menu.Item>
+                                                {({ active }) => (
+                                                    <a
+                                                        href="#"
+                                                        className={classNames(
+                                                            active
+                                                                ? "bg-gray-100"
+                                                                : "",
+                                                            "block px-4 py-2 text-sm text-gray-700"
+                                                        )}
+                                                    >
+                                                        Settings
+                                                    </a>
+                                                )}
+                                            </Menu.Item>
+                                            <Menu.Item>
+                                                {({ active }) => (
+                                                    <a
+                                                        href="#"
+                                                        className={classNames(
+                                                            active
+                                                                ? "bg-gray-100"
+                                                                : "",
+                                                            "block px-4 py-2 text-sm text-gray-700"
+                                                        )}
+                                                    >
+                                                        Sign out
+                                                    </a>
+                                                )}
+                                            </Menu.Item>
+                                        </Menu.Items>
+                                    </Transition>
+                                </Menu>
+                            </div>
                         </div>
-                        <Menu>
-                            <MenuButton as={Button}>
-                                <img
-                                    className="rounded-full w-[80px]"
-                                    src="./src/assets/img/navbar/profile-icon.webp"
-                                    alt=""
-                                />
-                            </MenuButton>
-                            <MenuList className="text-white bg-[#2D3748]  rounded-xl py-2">
-                                <MenuItem className="hover:bg-gray-600 w-full p-2 font-semibold">
-                                    Configs
-                                </MenuItem>
-                                <MenuItem className="hover:bg-gray-600 w-full p-2 font-semibold">
-                                    Logout
-                                </MenuItem>
-                                <MenuItem className="hover:bg-gray-600 w-full p-2 font-semibold">
-                                    Support
-                                </MenuItem>
-                                <MenuItem className="hover:bg-gray-600 w-full p-2 font-semibold">
-                                    Delete
-                                </MenuItem>
-                                <MenuItem className="hover:bg-gray-600 w-full p-2 font-semibold">
-                                    Attend a Workshop
-                                </MenuItem>
-                            </MenuList>
-                        </Menu>
-                        <div></div>
                     </div>
-                </div>
-            </div>
-        </header>
+
+                    <Disclosure.Panel className="sm:hidden">
+                        <div className="px-2 pt-2 pb-3 space-y-1">
+                            {navigation.map((item) => (
+                                <Disclosure.Button
+                                    key={item.name}
+                                    as="a"
+                                    href={item.href}
+                                    className={classNames(
+                                        item.current
+                                            ? "bg-gray-900 text-white"
+                                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                                        "block px-3 py-2 rounded-md text-base font-medium"
+                                    )}
+                                    aria-current={
+                                        item.current ? "page" : undefined
+                                    }
+                                >
+                                    {item.name}
+                                </Disclosure.Button>
+                            ))}
+                        </div>
+                    </Disclosure.Panel>
+                </>
+            )}
+        </Disclosure>
     );
 }
-export default Navbar;

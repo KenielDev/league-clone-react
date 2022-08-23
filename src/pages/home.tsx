@@ -2,8 +2,8 @@ import React from "react";
 import background from "/src/assets/img/home/pant-bg.jpg";
 // import backgroundMobile from "/src/assets/img/home/star-guardian-bg-mobile.png";
 // import backgroundVideo from "/src/assets/img/home/video-bg.webm";
-import { Navbar } from "../components/navbar";
 import { TabsHome } from "../components/TabsHome";
+import { Navbar } from "../components/navbar";
 
 export function HomeContent() {
     return (
@@ -12,7 +12,7 @@ export function HomeContent() {
                 backgroundImage: `url(${background})`,
                 backgroundSize: "cover",
             }}
-            className="hidden md:flex flex-col w-full h-[100vh]"
+            className="flex flex-col w-full h-[100vh]"
         >
             <div className="h-full w-full">
                 <Navbar />
