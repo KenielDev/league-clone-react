@@ -7,7 +7,6 @@ export function MainRoutes() {
     return (
         <Routes>
             <Route path="/" element={<HomeContent />} />
-            <Route path="profile" element={<Profile />} />
         </Routes>
     );
 }

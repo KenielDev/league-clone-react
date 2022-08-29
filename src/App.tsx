@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { ChampionCard } from "./components/championCard";
-import { HomeContent } from "./pages/home";
-import { Profile } from "./pages/Profile";
 import { BrowserRouter as Router } from "react-router-dom";
 import { MainRoutes } from "./pages/Routes";
 
@@ -10,14 +8,28 @@ import { MainRoutes } from "./pages/Routes";
 export function App() {
     const [champions, setChampions] = useState([]);
 
-    function getChampions() {
+    const imageArray = [1, 2, 3];
+
+    const pathsChampions = {
+        championLoading:
+            "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/",
+        championIcon:
+            "http://ddragon.leagueoflegends.com/cdn/12.14.1/img/champion/",
+        championSplashArt:
+            "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/",
+    };
+
+    const randomImage =
+        imageArray[Math.floor(Math.random() * imageArray.length)];
+
+    useEffect(() => {
         fetch(
-            "http://ddragon.leagueoflegends.com/cdn/12.14.1/data/en_US/champion.json"
+            "http://ddragon.leagueoflegends.com/cdn/12.14.1/data/pt_BR/champion.json"
         )
             .then((response) => response.json())
             .then((result) => setChampions(result.data));
         console.log(champions);
-    }
+    }, []);
 
     const array = [];
     array.push(champions);
@@ -29,45 +41,25 @@ export function App() {
         });
     });
 
-    console.log(arrChampions);
-
-    const imageArray = [1, 2, 3];
-
-    const championLoading =
-        "http://ddragon.leagueoflegends.com/cdn/img/champion/loading/";
-
-    const championIcon =
-        "http://ddragon.leagueoflegends.com/cdn/12.14.1/img/champion/";
-
-    const championSplashArtImage =
-        "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/";
-
-    const randomImage =
-        imageArray[Math.floor(Math.random() * imageArray.length)];
-
     const skinsChampions = `_${randomImage}.jpg`;
 
-    useEffect(() => {
-        getChampions();
-    }, []);
+    console.log(arrChampions);
 
     return (
         <Router>
-            <div>
-                {/* <div className="flex"> */}
-                {/* {arrChampions[0].map((champion) => {
-                return (
-                    <ChampionCard
-                        name={`${champion.name}`}
-                        image={`${championSplashArtImage}${champion.id}${skinsChampions}`}
-                    />
-                );
-            })} */}
-                {/* </div> */}
+            <div className="flex flex-wrap">
+                {arrChampions[0].map((champion) => {
+                    return (
+                        <ChampionCard
+                            name={`${champion.name}`}
+                            image={`${pathsChampions.championLoading}${champion.id}${skinsChampions}`}
+                            description={champion.blurb}
+                        />
+                    );
+                })}
                 <MainRoutes />
             </div>
         </Router>
     );
 }
-
 export default App;
