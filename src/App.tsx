@@ -47,13 +47,20 @@ export function App() {
 
     return (
         <Router>
-            <div className="flex flex-wrap">
-                {arrChampions[0].map((champion) => {
+            <div className="flex flex-wrap gap-4 justify-center">
+                {arrChampions[0].map((champion: any) => {
                     return (
                         <ChampionCard
                             name={`${champion.name}`}
-                            image={`${pathsChampions.championLoading}${champion.id}${skinsChampions}`}
+                            image={`${pathsChampions.championIcon}${champion.id}.png`}
                             description={champion.blurb}
+                            title={champion.title}
+                            classes={champion.tags.map((classes: any) => {
+                                return <div>{classes}</div>;
+                            })}
+                            hp={champion.stats.hp}
+                            atack={champion.stats.attackdamage}
+                            defense={champion.stats.armor}
                         />
                     );
                 })}
